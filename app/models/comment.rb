@@ -1,6 +1,9 @@
 class Comment < ApplicationRecord
-  belongs_to :auteur
+  belongs_to :user
   belongs_to :pin
 
-  validates :body, :auteur, :pin, presence: true
+  validates :body, presence: true
+  validates :user, presence: true
+  validates :pin, presence: true
+
 end

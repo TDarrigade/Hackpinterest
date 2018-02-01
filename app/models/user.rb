@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  belongs_to :pin
-  belongs_to :comment
+  has_many :pins, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :name, :pin, :comment, presence: true
 end
