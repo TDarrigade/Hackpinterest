@@ -1,5 +1,8 @@
 class Pin < ApplicationRecord
-  belongs_to :comment
+  has_many :comment, dependent: :destroy
+  belongs_to :user
 
-  validates :photo, :auteur, :comment, presence: true
+  validates :photo, presence: true
+  validates :user, presence: true
+  validates :comment, presence: true
 end
